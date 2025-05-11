@@ -1,54 +1,118 @@
-# React + TypeScript + Vite
+# Calculadora de IMC - React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma aplicação web desenvolvida em **React** com **TypeScript** e configurada com o **Vite** para oferecer uma experiência de desenvolvimento rápida e eficiente. A aplicação permite calcular o Índice de Massa Corporal (IMC) com base na altura e peso fornecidos pelo usuário, exibindo o resultado com uma classificação detalhada.
 
-Currently, two official plugins are available:
+## Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**: Biblioteca para construção de interfaces de usuário.
+- **TypeScript**: Superset do JavaScript que adiciona tipagem estática ao código.
+- **Vite**: Ferramenta de build rápida e moderna para projetos front-end.
+- **CSS Modules**: Para estilização modular e escopo de classes CSS.
+- **ESLint**: Ferramenta de linting para manter a qualidade do código.
+- **SWC**: Compilador rápido para JavaScript/TypeScript, usado para Fast Refresh.
 
-## Expanding the ESLint configuration
+## Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Cálculo do IMC**: O usuário insere sua altura e peso, e o sistema calcula o IMC com base na fórmula padrão.
+- **Classificação do IMC**: O resultado é exibido com uma mensagem indicando a classificação (ex.: Peso baixo, Peso adequado, Sobrepeso, etc.).
+- **Validação de Entrada**: Verifica se os campos foram preenchidos corretamente antes de realizar o cálculo.
+- **Interface Responsiva**: Layout adaptável para diferentes tamanhos de tela.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Estrutura do Projeto
+
+A estrutura do projeto foi organizada para facilitar a escalabilidade e manutenção:
+
+```
+/src
+  /assets         # Arquivos estáticos (imagens, ícones, etc.)
+  /components     # Componentes reutilizáveis
+    /Header       # Componente de cabeçalho
+    /Formulario   # Componente principal para cálculo do IMC
+  /styles         # Estilos globais e variáveis CSS
+  App.tsx         # Componente raiz da aplicação
+  main.tsx        # Ponto de entrada do React
+/public
+  index.html      # Arquivo HTML principal
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Como Executar o Projeto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Siga os passos abaixo para rodar o projeto localmente:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### Pré-requisitos
+
+- Node.js (versão 16 ou superior)
+- Gerenciador de pacotes (npm ou yarn)
+
+### Passos
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   cd seu-repositorio
+   ```
+
+2. Instale as dependências:
+   ```bash
+   npm install
+   # ou
+   yarn install
+   ```
+
+3. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   # ou
+   yarn dev
+   ```
+
+4. Abra o navegador e acesse:
+   ```
+   http://localhost:5173
+   ```
+
+## Configuração de Lint e Formatação
+
+O projeto utiliza **ESLint** para garantir a qualidade do código e **Prettier** para formatação consistente. As configurações podem ser ajustadas nos arquivos `.eslintrc` e `.prettierrc`.
+
+### Comandos úteis:
+
+- Verificar problemas de lint:
+  ```bash
+  npm run lint
+  ```
+
+- Corrigir problemas automaticamente:
+  ```bash
+  npm run lint:fix
+  ```
+
+## Personalização
+
+### Alterar o título da página
+O título da aba do navegador pode ser alterado no arquivo `public/index.html`:
+```html
+<title>Calculadora de IMC</title>
 ```
+
+### Substituir o ícone da página
+Para alterar o favicon, substitua o arquivo `public/favicon.ico` pelo ícone desejado.
+
+## Próximos Passos
+
+- [ ] Adicionar testes unitários com **Jest** e **React Testing Library**.
+- [ ] Melhorar a acessibilidade (A11y) da aplicação.
+- [ ] Implementar suporte para múltiplos idiomas (i18n).
+- [ ] Adicionar animações para melhorar a experiência do usuário.
+
+## Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
+
+---
+
+Desenvolvido por Diego Soares (https://github.com/diegofelipesoares).
