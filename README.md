@@ -109,10 +109,6 @@ Para alterar o favicon, substitua o arquivo `public/favicon.ico` pelo ícone des
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
-## Licença
-
-Este projeto está licenciado sob a [MIT License](LICENSE).
-
 ---
 
 Desenvolvido por Diego Soares (https://github.com/diegofelipesoares).
