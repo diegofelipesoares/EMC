@@ -1,0 +1,22 @@
+.containerForm {
+    text-align: center;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction:column;
+}
+
+input{
+    margin-bottom: 12px;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #6d6d6d;
+}
+
+.buttonForm{
+    background-color: #003940;
+    color: white;
+    padding: 8px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    border: 1px solid #6d6d6d;
+}

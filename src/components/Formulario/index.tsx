@@ -1,4 +1,6 @@
- import { useState } from 'react';
+import styles from './Formulario.module.css'; // Ensure CSS module typing is configured
+import { useState } from 'react';
+
 
 const Formulario = () => {
     const [altura, setAltura] = useState<number>(0);
@@ -16,7 +18,7 @@ const Formulario = () => {
     const renderizaResultado = (imc: number | null) =>{
         if (imc === null) return "Preencha os campos para calcular o IMC"
         if (imc <= 18.5){
-            return `seu imc é ${imc} peso baixo`;
+            return `Seu IMC é ${imc} - Peso baixo`;
         } else if (imc > 18.5 && imc <= 24.9){
             return `Seu IMC é ${imc} - Peso adequado`;
         } else if (imc > 24.9 && imc <= 29.9){
@@ -31,16 +33,16 @@ const Formulario = () => {
     } 
 
     return (
-        <form>
+        <form className={styles["containerForm"]}>
             {/*inputs e eventos onChange*/}
-            <input type="number" placeholder="Altura (em metros):" 
+            <input type="number" placeholder="Altura (em metros): - Ex. 1.60" 
             onChange={evento => setAltura(Number(evento.target.value))}/>
             <input type="number" placeholder="Seu Peso:" 
             onChange={evento => setPeso(Number(evento.target.value))}/>
-            <button onClick={(evento) => {
+            <button className={styles["buttonForm"]} onClick={(evento) => {
                 evento.preventDefault();
                 setResultado(Number(calcularIMC()));
-            }}>Calcular IMC</button>
+            }}>CALCULAR</button>
             <p>{renderizaResultado(resultado)}</p>
         </form>
 
